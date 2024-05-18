@@ -1,0 +1,21 @@
+p{
+    font-style: oblique;
+    color: white;
+    text-justify: distribute;
+}
+body{
+    background: url("../img/fondo3.jpg");
+    background-size: cover;
+}
+section{
+    padding: 3% 1%;
+    background: rgba(0, 0, 0, 0.541);
+}
+h1,h2,h3{
+    font-size: 45px;
+    color: white;
+    
+}
+h1,h2{
+    text-decoration: underline;
+}

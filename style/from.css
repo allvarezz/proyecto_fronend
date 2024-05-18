@@ -1,0 +1,89 @@
+body{
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(120deg,#5baadf,#b6f703);
+}
+.formulario{
+    border-radius: 15px;
+    padding: 2%;
+}
+form > div {
+    display: flex;
+    flex-direction: column;
+
+}
+form > div > label{
+    margin-left: 1%;
+    color: white;
+}
+form > div > input{
+    height: 35px;
+    padding: 0 0 0 2%;
+    border-radius: 15px;
+}
+.nac{
+    padding: 0 2%;
+}
+select{
+    height: 35px;
+    padding: 0 0 0 2%;
+    border-radius: 15px;
+}
+form > div > textarea{
+    padding: 0 0 0 2%;
+    margin-top: 0.5%;
+    border-radius: 15px;
+}
+.formulario > textarea{
+    padding: 0 0 0 2%;
+    margin-top: 2% !important;
+    border-radius: 10px !important;
+
+}
+.card{
+    background-color: rgba(0, 0, 0, 0.24);
+}
+h2{
+    background-color: blue  ;
+   font-size: 150%;
+    height: auto;
+    text-align: center;
+    color: white;
+    padding-bottom: 1%;
+    
+}
+form {
+    align-items: center;
+    align-content: center;
+    justify-items: center;
+}
+.position-relative{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+button{
+    margin: 0 1%;
+    border-radius: 15px;
+
+}
+button:hover{
+    background: rgb(31, 224, 31);
+    border: 1px solid rgb(31, 224, 31) ;
+
+}
+button:active{
+    background: rgb(17, 121, 17);
+    border: 1px solid rgb(234, 255, 50) ;
+}
+
+@media screen and (max-width:575px){
+
+    .position-relative{
+        flex-direction: column;
+        justify-content: center;
+    }
+
+}
+
+
