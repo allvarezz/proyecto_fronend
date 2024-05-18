@@ -2,9 +2,10 @@ p{
     font-style: oblique;
     color: white;
     text-justify: distribute;
+    font-size: 25px;
 }
 body{
-    background: url("../img/fondo3.jpg");
+    background: url("../img/fondo3.jpg") 100% 100%;
     background-size: cover;
 }
 section{
@@ -12,7 +13,7 @@ section{
     background: rgba(0, 0, 0, 0.541);
 }
 h1,h2,h3{
-    font-size: 45px;
+    font-size: 40px;
     color: white;
     
 }

@@ -55,19 +55,93 @@
     
             <div class="card col-lg-4">
                 <img src="/img/prod01.jpg" alt="">
-                <p id="p_titulo">Ensalada Cesar</p>
+                <div id="sub-prod">
+                  <p id="p_titulo">Ensalada Cesar</p>
                 <p id="p_precio">2950</p>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Ver</button>
+
+                </div>
+                
             </div>
+            <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body ">
+        <img src="/img/img-sub-01.jpg" alt="">
+        <img src="/img/img-sub-02.jpg" alt="">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="btn-cerrar">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
             <div class="card col-lg-4">
                 <img src="/img/prod02.jpg" alt="">
+                <div id="sub-prod">
                 <p id="p_titulo">Gohan</p>
                 <p id="p_precio">2950</p>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal2">Ver</button>
+
+                </div>
             </div>
+
+            <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel2">Modal title</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body ">
+                    <img src="/img/img-sub-03.jpg" alt="">
+                    <img src="/img/img-sub-04.jpg" alt="">
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="btn-cerrar">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+
             <div class="card col-lg-4">
                 <img src="/img/prod03.jpg" alt="">
+                <div id="sub-prod">
                 <p id="p_titulo">Gohan Pollo</p>
                 <p id="p_precio">2950</p>
-            </div>
+            
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal3">Ver</button>
+
+                </div>
+              </div>
+
+                <div class="modal fade" id="exampleModal3" tabindex="-3" aria-labelledby="exampleModalLabel3" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel3">Modal title</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body ">
+                        <img src="/img/img-sub-05.jpeg" alt="">
+                        <img src="/img/img-sub-06.jpg" alt="">
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="btn-cerrar">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
             
             <div class="card col-lg-4">
                 <img src="/img/prod04.jpg" alt="">
@@ -104,5 +178,10 @@
     </section>
 
 
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>

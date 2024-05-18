@@ -26,3 +26,20 @@ section{
 p{
     margin: 0;
 }
+#sub-prod{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 1%;
+    align-items: center;
+    justify-content: center;
+}
+#sub-prod > p{
+    margin: 1%;
+}
+#sub-prod > button{
+    margin: 1%;
+}
+#btn-cerrar{
+    background: red !important;
+}
