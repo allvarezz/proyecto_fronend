@@ -3,7 +3,7 @@ $(document).ready(function () {
     e.preventDefault();
     var usuario = $("#usuario").val();
     if (usuario === "") {
-      return swal("Completar datos del usuario");
+      return swal("Complete campo usuario");
     }
     var pass = $("#password").val();
     if (pass === "") {
@@ -11,7 +11,11 @@ $(document).ready(function () {
       }
 
       if(usuario!="" && pass!=""){
-        return swal("Bienvenido!!!!!!😊😊😊😊😊")
+        return Swal.fire({
+          title: "Login Perfecto!! 😎😎😎",
+          text: "Bienvenido"+" "+usuario,
+          icon: "success"
+        });
       }
 
 
