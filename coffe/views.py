@@ -5,3 +5,7 @@ from django.shortcuts import render
 def index(request):
 
     return render(request,'coffe/index.html')
+
+def producto(request):
+
+    return render(request,'coffe/productos.html')
