@@ -25,6 +25,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{% static '/css/bootstrap.min.css'%}" />
     <!-- Site CSS -->
+    <link rel="stylesheet" href="{% static '/css/index.css'%}" />
     <link rel="stylesheet" href="{% static '/css/style.css'%}" />
     <!-- Responsive CSS -->
     <link rel="stylesheet" href="{% static '/css/responsive.css'%}" />
@@ -91,8 +92,8 @@
                 >
                 <div class="dropdown-menu" aria-labelledby="dropdown-a">
                   <a class="dropdown-item" href="blog.html">blog</a>
-                  <a class="dropdown-item" href="blog-details.html"
-                    >blog Single</a
+                  <a class="dropdown-item" href="{% url 'add'  %}"
+                    >Agregar Productos</a
                   >
                 </div>
               </li>
@@ -211,7 +212,7 @@
         <div class="row">
           <div class="col-lg-6 col-md-6 col-sm-12">
             <img
-              src="{% static '/images/about-img.jpg'%}"
+              src="{% static '/images/fondo.jpg'%}"
               alt=""
               class="img-fluid"
             />
