@@ -1268,12 +1268,8 @@ blockquote {
 
 
 
-
-
-
-
-
-
-
-
-
+#categoria-menu-menu{
+    background-color: #010101;
+    position: sticky !important;
+    top: 40px;
+}

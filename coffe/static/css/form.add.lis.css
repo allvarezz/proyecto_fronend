@@ -2,3 +2,13 @@ form{
     width: 580px;
     height: 450px;
 }
+
+table{
+    margin-top: 100px;
+}
+thead{
+    background: black;
+    color: wheat;
+    position: ;
+    top: 0;
+}

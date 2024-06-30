@@ -22,13 +22,15 @@ def producto(request):
 
 
 def list_prod(request):
+     orden=request.GET.get('orden', 'id_producto')
+     productos=Producto.objects.all().order_by(orden)
      if request:
           if request.method == 'POST':
             form=FormProd(request.POST,request.FILES)
             if form.is_valid():
                 form.save()
             return redirect('BD')
-     return render(request,'coffe/listado_prod.html',{'productos':Ext_prod()})
+     return render(request,'coffe/listado_prod.html',{'productos':productos})
 
 
 
