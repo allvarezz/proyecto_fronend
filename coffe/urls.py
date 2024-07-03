@@ -8,5 +8,6 @@ urlpatterns=[
     path('BD/',views.list_prod,name='BD'),
     path('BD/',views.cruD,name='BD/ADD'),
     path('BD/<str:id>',views.del_prod,name='dele'),
+    path('contacto',views.contac,name='contacto'),
 
 ]

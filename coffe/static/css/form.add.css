@@ -10,7 +10,7 @@ body{
     align-content: center;
     align-self: center;
     justify-items: center;
-    background-image: url("../images/all-bg.jpg") !important ;
+    background-image: url("../images/about-img.jpg") !important ;
     background-repeat: no-repeat;
     background-size: cover 100% 100%;
 }

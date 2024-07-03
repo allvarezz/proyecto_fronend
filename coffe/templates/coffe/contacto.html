@@ -1,0 +1,19 @@
+{% extends 'coffe/index.html'  %}
+
+{% load static %}
+
+
+{%  block content  %}
+<form action="" method="post">
+
+    {% csrf_token %}
+{{forms.as_table}}
+
+
+
+    <input type="submit">
+
+</form>
+
+
+{%  endblock  %}

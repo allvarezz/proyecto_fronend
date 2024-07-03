@@ -30,7 +30,7 @@
             {%  for producto in productos %}
             <div class="col-lg-4 col-md-6 special-grid {{producto.fk_categoria}}">
                 <div class="gallery-single fix">
-                    <img src="{{producto.imagen.url}}" width="450" height="200" class="img-fluid" alt="Image">
+                    <img src="{{producto.imagen.url}}" width="450" height="250" class="img-fluid" alt="Image">
                     <div class="why-text">
                         <h4>{{producto.fk_categoria}}</h4>
                         <p>{{producto.descripcion}}</p>

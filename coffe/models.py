@@ -23,3 +23,9 @@ class Producto(models.Model):
 
     def __str__(self):
         return str(self.nombre)
+    
+class Contacto(models.Model):
+
+    nombre=models.CharField(max_length=150 )
+    asunto=models.CharField(max_length=500)
+    email=models.EmailField(null=False)
