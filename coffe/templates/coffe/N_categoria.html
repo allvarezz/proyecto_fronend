@@ -1,0 +1,108 @@
+{%  load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <title>Document</title>
+    <style>
+        #btn-cate{
+            width: 150px;
+            height: 40px;
+            background: black;
+            color: white;
+        }
+        #btn-cate.active{
+            background: red;
+
+        }
+        body{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            overflow: hidden;
+            position: relative;
+
+        }
+        #aside{
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 90px;
+            height: 100vh;
+            background: blue;
+        }
+        #contenido{
+            display: flex;
+            flex-wrap: wrap;
+            position: absolute;
+            left: 90px;
+            width: calc(100% - 90px);
+            height: 100vh;
+            background: yellow;
+        }
+        #tarjeta{
+            width: 150px;
+            height: 350px;
+            background: blueviolet;
+            margin: 1%;
+        }
+    </style>
+</head>
+<body>
+
+   
+        <div id="aside">
+            <a href="{{0}}" id="btn-cate">All</a>
+            {% for i in categorias   %}
+            <a href="{{i.id_categoria}}" id="btn-cate">{{i.nombre}} - {{i.id_categoria}}</a>
+            {% endfor %}
+            
+
+        </div>
+        <div id="contenido">
+            {% if true %}
+                {% for p in productos  %}
+                <div id="tarjeta">
+
+                    {{p.nombre}}
+                    
+                    <img src="{{p.imagen.url}}" width="100" height="100" alt="">
+                </div>
+                {% endfor %}
+            {% else %}
+                {% for i in producto  %}
+                <div id="tarjeta">
+
+                    {{i.nombre}}
+                    
+                    <img src="{{i.imagen.url}}" width="100" height="100" alt="">
+                </div>
+                {% endfor %}
+            {% endif %}
+
+        </div>
+ 
+    <script >
+        let btn_cate=document.querySelectorAll('#btn-cate')
+       
+
+            btn_cate.forEach(x => {
+
+                x.addEventListener('click',(e)=>{
+                   
+
+                    e.currentTarget.classList.add('active')
+                
+
+                })
+                
+            });
+
+
+    </script>
+    <script defer src="{% static 'js/bootstrap.min.js'   %}"></script>
+    
+</body>
+</html>

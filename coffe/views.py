@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Producto
+from .models import Producto,Categoria
 from .forms import FormProd, ContactoForm
 
 # Create your views here.
@@ -20,6 +20,20 @@ def producto(request):
         return render(request, 'coffe/productos.html', {
             'productos': Ext_prod()
         })
+    
+def N_categoria(request):
+     
+     categorias=Categoria.objects.all()
+     
+     
+     return render(request,'coffe/N_categoria.html',{'categorias':categorias,'true':True,'productos':Ext_prod()})
+
+def N_cat_prod(request,id):
+     
+     categorias=Categoria.objects.all()
+     producto_categoria=Producto.objects.filter(fk_categoria=id)
+     
+     return render(request,'coffe/N_categoria.html',{'producto':producto_categoria,'categorias':categorias})
 
 
 def list_prod(request):

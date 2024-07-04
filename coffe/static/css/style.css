@@ -17,12 +17,19 @@
 /*------------------------------------------------------------------
     SKELETON
 -------------------------------------------------------------------*/
-
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
 body {
+    position: relative;
     color: #666666;
     font-size: 15px;
     font-family: 'Athiti', sans-serif;
     line-height: 1.80857;
+   
 }
 
 
@@ -1269,6 +1276,7 @@ blockquote {
 
 
 #categoria-menu-menu{
+    z-index: 101;
     background-color: #010101;
     position: sticky !important;
     top: 40px;
