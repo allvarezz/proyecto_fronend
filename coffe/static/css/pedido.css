@@ -1,0 +1,155 @@
+
+body{
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    background: black;
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
+   
+
+}
+nav{
+    position: absolute ;
+    top: 0px;
+    border: 1px solid white;
+    height: 95px;
+    width: 100vw;
+}
+aside{
+    width: 240px;
+    height: calc(100% - 95px);
+    position: sticky ;
+    background: rebeccapurple;
+    top: 97px;
+    left: 0px;
+    bottom: 0px;
+    border: 1px solid rgb(218, 22, 22);
+}
+aside ul{
+    top: 20px;
+    position: absolute;
+    width: 240px   ;
+} 
+aside ul a{
+    text-align: center;
+    margin: 2% 0;
+    display: inline-block;
+    transform: translateX(-17%);
+    background: red;
+    padding: 10px 0;
+    width: 99%;
+    text-decoration: none;
+}
+section{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 97px;
+    left: 240px;
+    bottom: 0;
+    flex-direction: column;
+    align-items: center;
+    width: calc(100% - 240px);
+    height: calc(100% - 97px);
+    background: rgba(0, 0, 255, 0.295);
+    border: 1px solid rgb(113, 214, 19);
+   
+}
+#categorias{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+    height: 100px;
+    background: wheat;
+    flex-direction: row;
+    width: calc(100% - 240px);
+}
+
+#categorias ul{
+    background: red;
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-size: 1.5rem;
+}
+#list_produc{
+    margin: 0 10%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    
+    height: 100%;
+    background: rgb(211, 91, 55);
+    flex-direction: row;
+    width: calc(100% - 10%);
+    overflow: scroll;
+    scrollbar-width: none;
+
+}
+#tarjeta-pedido{
+    
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin: 1%;
+    width: 350px;
+    height: 300px;
+    background: pink;
+}
+#contenido-pedido{
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 320px;
+    height: 250px;
+    background: white;
+    transition: all 0.5s ease;
+}
+#contenido-pedido:hover{
+    width: 325px;
+    height: 255px;
+    padding: 0.5%;
+}
+#contenido-pedido:hover ~ image{
+    width: 310px;
+    height: 160px;
+
+}
+#contenido-pedido img{
+    margin: 1% 0;
+    width: 300px;
+    height: 150px;
+    background: red;
+}
+#detalle{
+    top: 160px;
+    width: 100%;
+    height: 25px;
+    background: black;
+    align-items: center;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+#descripcion{
+    
+
+    top: 195px;
+    width: 100%;
+    background: yellow;
+}

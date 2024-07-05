@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static '/css/pedido.css'  %}">
+    {#<link rel="stylesheet" href="{% static '/css/bootstrap.min.css'  %}">#}
+    <title>pedidos</title>
+</head>
+<body>
+
+    <nav></nav>
+    <aside>
+        <ul>
+            <a href="">Home</a>
+            <a href="">About</a>
+            <a href="">Producto</a>
+            <a href="">Pedir</a>
+            <a href="">Contacto</a>
+        </ul>
+    </aside>
+    <section>
+        <div id="categorias">
+            <ul>
+                <a href="{{0}}" id="btn-cate">All</a>
+            {% for i in categorias   %}
+            <a href="{{i.id_categoria}}" id="btn-cate">{{i.nombre}} - {{i.id_categoria}}</a>
+            {% endfor %}
+            </ul>
+
+        </div>
+        <div id="list_produc">
+            {% if true %}
+                {% for p in productos  %}
+
+            <article id="tarjeta-pedido">
+                <div id="contenido-pedido">
+                    <img src="{{p.imagen.url}}" alt="">
+                    <div id="detalle"> <p id="nombre">{{p.nombre}}</p> <p id="precio">{{p.precio}}</p></div>
+                    <p id="descripcion">
+                        {{p.descripcion}}
+                    </p>
+                </div>
+
+            </article>
+            {% endfor %}
+            {% else %}
+                {% for i in producto  %}
+            <article id="tarjeta-pedido">
+                <div id="contenido-pedido">
+                    <img src="{{i.imagen.url}}" alt="">
+                    <div id="detalle"> <p id="nombre">{{i.nombre}}</p> <p id="precio">{{i.precio}}</p></div>
+                    <p id="descripcion">
+                        {{i.descripcion}}
+                    </p>
+                </div>
+
+            </article>
+            {% endfor %}
+            {% endif %}
+
+        </div>
+    </section>
+    
+</body>
+</html>

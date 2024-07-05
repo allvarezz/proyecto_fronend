@@ -37,17 +37,28 @@
             display: flex;
             flex-wrap: wrap;
             position: absolute;
+            flex-direction: column;
             left: 90px;
             width: calc(100% - 90px);
             height: 100vh;
             background: yellow;
         }
         #tarjeta{
+            position: absolute;
+            top: 80px;
             width: 150px;
             height: 350px;
             background: blueviolet;
             margin: 1%;
         }
+        nav{
+            position: absolute;
+            background: black;
+            color: white;
+            height: 80px;
+            width: calc(100% - 90px);
+        }
+
     </style>
 </head>
 <body>
@@ -62,6 +73,11 @@
 
         </div>
         <div id="contenido">
+            <nav><ul>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+            </ul></nav>
             {% if true %}
                 {% for p in productos  %}
                 <div id="tarjeta">

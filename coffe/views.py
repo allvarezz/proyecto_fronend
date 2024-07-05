@@ -6,7 +6,6 @@ from .forms import FormProd, ContactoForm
 
 
 def index(request):
-
     return render(request, 'coffe/index.html')
 
 
@@ -104,6 +103,24 @@ def contac(request):
      return render(request,'coffe/contacto.html',{
      'forms':form
 })
+
+
+
+
+
+def pedidos(request):
+     categorias=Categoria.objects.all()
+
+     
+
+     return render(request,'coffe/pedido.html',{'categorias':categorias,'true':True,'productos':Ext_prod()})
+
+def pedidosP(request,id):
+     
+     categorias=Categoria.objects.all()
+     producto_categoria=Producto.objects.filter(fk_categoria=id)
+     
+     return render(request,'coffe/pedido.html',{'producto':producto_categoria,'categorias':categorias})
 
 
 

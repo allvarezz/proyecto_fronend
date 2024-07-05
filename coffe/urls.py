@@ -13,4 +13,9 @@ urlpatterns=[
     path('BD/<str:id>',views.del_prod,name='dele'),
     path('contacto',views.contac,name='contacto'),
 
+
+    path('pedido/',views.pedidos,name='pedidos'),
+    path('pedido/0',views.pedidos,name='pedidos'),
+     path('pedido/<str:id>',views.pedidosP,name='pedidos'),
+
 ]
