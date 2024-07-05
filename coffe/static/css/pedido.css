@@ -65,11 +65,11 @@ section{
     display: flex;
     align-items: center;
     justify-content: center;
-   
+    width: calc(100% - 10%);
     height: 100px;
     background: wheat;
     flex-direction: row;
-    width: calc(100% - 240px);
+    
 }
 
 #categorias ul{
