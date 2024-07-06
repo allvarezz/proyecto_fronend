@@ -65,9 +65,13 @@ def edi_prod(request, id):
                if request.method == 'POST':
                     form = FormProd(request.POST, instance=producto)
                     form.save()
-          return redirect('BD')
+                    return redirect('BD')
+               else:
+                    form=FormProd(instance=producto)
         except:
              return render(request, 'coffe/listado_prod.html', {'productos': Ext_prod()})
+        
+
 
 
 def add_prod(request):

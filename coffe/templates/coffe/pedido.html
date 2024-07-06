@@ -9,30 +9,32 @@
     <title>pedidos</title>
 </head>
 <body>
+    <nav>
+        
+    </nav>
 
-    <nav></nav>
+    
     <aside>
         <ul>
-            <a href="">Home</a>
-            <a href="">About</a>
-            <a href="">Producto</a>
-            <a href="">Pedir</a>
-            <a href="">Contacto</a>
+            <a href="{% url 'index' %}">Home</a>
+            <a href="{% url 'index' %}">About</a>
+            <a href="{% url 'productos' %}">Producto</a>
+            <a href="{% url 'BD' %}">Pedidos</a>
         </ul>
     </aside>
     <section>
         <div id="categorias">
             <ul>
-                <a href="{{0}}" id="btn-cate"><img src="{% static '/images/icon-cate/icon-todooo.webp' %}" width="100" height="50" alt=""></a>
+                <a href="{{0}}" id="btn-cate">{#  <img src="{% static '/images/icon-cate/icon-todooo.webp' %}" width="80" height="50" alt=""> #} Todo los Productos</a>
             {% for i in categorias   %}
             {% if i.id_categoria == 2 %}
-            <a href="{{i.id_categoria}}" id="btn-cate"> <img src="{% static '/images/icon-cate/icon-ensalada01.png' %}" width="100" height="50" alt=""></a>
+            <a href="{{i.id_categoria}}" id="btn-cate"> {# <img src="{% static '/images/icon-cate/icon-ensa.png' %}" width="100" height="50" alt="">#} Ensalada </a>
             {% elif i.id_categoria == 3 %}
-            <a href="{{i.id_categoria}}" id="btn-cate"> <img src="{% static '/images/icon-cate/icon-sandwich-01.png' %}" width="100" height="50" alt=""></a>
+            <a href="{{i.id_categoria}}" id="btn-cate"> {# <img src="{% static '/images/icon-cate/icon-sandwich-01.png' %}" width="100" height="50" alt=""> #} Sandwich</a>
             {% elif i.id_categoria == 4 %}
-            <a href="{{i.id_categoria}}" id="btn-cate"> <img src="{% static '/images/icon-cate/postres1.png' %}" width="100" height="50" alt=""></a>
+            <a href="{{i.id_categoria}}" id="btn-cate"> {# <img src="{% static '/images/icon-cate/postres1.png' %}" width="100" height="50" alt=""> #} Postres</a>
             {% elif i.id_categoria == 5 %}
-            <a href="{{i.id_categoria}}" id="btn-cate"> <img src="{% static '/images/icon-cate/icon-plato-caliente.png' %}" width="100" height="50" alt=""></a>
+            <a href="{{i.id_categoria}}" id="btn-cate"> {# <img src="{% static '/images/icon-cate/icon-plato-caliente.png' %}" width="100" height="50" alt="">#} Caliente</a>
             {% endif %}
             {% endfor %}
             </ul>
@@ -42,7 +44,7 @@
             {% if true %}
                 {% for p in productos  %}
 
-            <article id="tarjeta-pedido">
+            <article id="tarjeta-pedido" class="headline">
                 <div id="contenido-pedido">
                     <img src="{{p.imagen.url}}" alt="">
                     <div id="detalle"> <p id="nombre">{{p.nombre}}</p> <p id="precio">{{p.precio}}</p></div>
@@ -55,7 +57,7 @@
             {% endfor %}
             {% else %}
                 {% for i in producto  %}
-            <article id="tarjeta-pedido">
+            <article id="tarjeta-pedido" class="headline">
                 <div id="contenido-pedido">
                     <img src="{{i.imagen.url}}" alt="">
                     <div id="detalle"> <p id="nombre">{{i.nombre}}</p> <p id="precio">{{i.precio}}</p></div>
@@ -71,5 +73,6 @@
         </div>
     </section>
     
+
 </body>
 </html>
