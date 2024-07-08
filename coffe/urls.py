@@ -11,6 +11,7 @@ urlpatterns=[
     path('BD/',views.list_prod,name='BD'),
     path('BD/',views.cruD,name='BD/ADD'),
     path('BD/<str:id>',views.del_prod,name='dele'),
+    path('BD/<str:id>',views.edi_prod,name='editar'),
     path('contacto',views.contac,name='contacto'),
 
 

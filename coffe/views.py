@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Producto,Categoria
 from .forms import FormProd, ContactoForm
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
@@ -67,9 +68,10 @@ def edi_prod(request, id):
                     form.save()
                     return redirect('BD')
                else:
-                    form=FormProd(instance=producto)
+                form=FormProd(instance=producto)
+                return render(request, 'coffe/listado_prod.html', {'productos': Ext_prod(),'edi_form':form})
         except:
-             return render(request, 'coffe/listado_prod.html', {'productos': Ext_prod()})
+             return render(request, 'coffe/listado_prod.html', {'productos': Ext_prod(),'edi_form':form})
         
 
 
@@ -111,7 +113,7 @@ def contac(request):
 
 
 
-
+@login_required
 def pedidos(request):
      categorias=Categoria.objects.all()
 

@@ -1,6 +1,7 @@
 form{
     width: 580px;
     height: 450px;
+    background-color: none;
 }
 
 table{
@@ -19,15 +20,11 @@ tr:hover{
     text-align: center;
 }
 
-form{
-    color: white !important;
-   
-    background-color: rgba(3, 3, 3, 0.76) !important;
-    
-    display: flex;
-    flex-direction: column;
-    width: 850px !important;
-    height: 450px;
+td:hover{
+    background: rgba(244, 248, 21, 0.719);
+    color: black;
+    align-items: center;
+    text-align: center;
 }
 input,select,button{
     margin-top: 0.5%;

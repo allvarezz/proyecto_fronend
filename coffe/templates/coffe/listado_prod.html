@@ -96,7 +96,7 @@
         <td>{{x.precio}}</td>
         <td>{{x.fk_categoria}}</td>
         <td><img src="{{x.imagen.url}}" width="150" height="100" alt=""></td>
-        <td><a href="" class="btn bg-warning" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Editar</a>
+        <td><a href="{% url 'editar' x.id_producto %}" class="btn bg-warning" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Editar</a>
           <a href="{% url 'dele' x.id_producto  %}" class="btn bg-danger" id="t-btn-eliminar">Eliminar</a>
         
         </td>
@@ -113,27 +113,12 @@
             </div>
             <div class="modal-body  bg-warning">
               <form method="post" enctype="multipart/form-data">
-                {% csrf_token %}
-                <img src="{{x.imagen.url}}" class="col-sm-6 my-1" width="60" height="50" alt="">
-                <label for="id_nombre">Producto</label>
-              <input type="text" class="col-sm-12 my-1" id="id_nombre"
-              value="{{x.nombre}}">
+                  {% csrf_token %}
+                  {{ edi_form }}
+                  <button class="btn btn-success" type="submit">Guardar</button>
+              </form>
 
-              <label for="id_descripcion">Descripcion</label>
-              <input type="text" class="col-sm-12 my-1" id="id_descripcion" value="{{x.descripcion}}">
-
-              <label for="id_precio">Precio</label>
-              <input type="text" class="col-sm-12 my-1" id="id_precio" value="{{x.precio}}">
-
-              <label for="id_imagen">Imagen</label>
-              <div class="col-sm-12">
-                <input type="file" class="col-sm-6 my-1" id="id_imagen" value="">
-              
-
-              </div>
-              
-              <input type="submit" value="">
-            </form>
+             
 
 
             </div>

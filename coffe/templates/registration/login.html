@@ -1,0 +1,21 @@
+{% extends 'coffe/index.html'  %}
+
+{% load static %}
+
+
+{%  block content  %}
+<form action="" method="post" class="my-5">
+
+    {% csrf_token %}
+
+    <input type="text" name="username" placeholder="Nombre de usuario">
+    <input type="password" name="password" placeholder="password">
+
+
+
+    <input type="submit" class="btn btn-warning">
+
+</form>
+
+
+{%  endblock  %}
