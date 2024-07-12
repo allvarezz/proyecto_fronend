@@ -1,10 +1,10 @@
 {% extends 'coffe/index.html'  %}
 
 {% load static %}
-{%block active-index %} <li class="nav-item "><a class="nav-link" href="{% url 'index' %}">Home</a></li> {%endblock%}
+                        {%block active-index %} <li class="nav-item "><a class="nav-link" href="{% url 'index' %}">Home</a></li> {%endblock%}
 				
 						{% block active-menu %}<li class="nav-item"><a class="nav-link  " href="{% url 'menu' %}">Productos</a></li> {% endblock %}
-						{% block active-about%}<li class="nav-item"><a class="nav-link  " href="about.html">About</a></li> {% endblock %}
+						{% block active-about%}<li class="nav-item"><a class="nav-link  " href="{% url 'about' %}">About</a></li> {% endblock %}
 						
 						
 						{% block active-contacto%}<li class="nav-item"><a class="nav-link" href="{% url 'contacto' %}/">Contacto</a></li> {% endblock %}

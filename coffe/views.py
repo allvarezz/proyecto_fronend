@@ -1,3 +1,7 @@
+from django.core.mail import EmailMessage
+from django.contrib import messages
+from django.conf import settings
+from django.template.loader import render_to_string
 from django.shortcuts import render, redirect
 from .models import Producto,Categoria
 from .forms import FormProd, ContactoForm
@@ -12,19 +16,47 @@ def index(request):
 def menu(request):
     return render(request, 'coffe/menu.html')
 def contacto(request):
-    return render(request, 'coffe/contact.html')
+     if request.method == 'POST':
+        nombre = request.POST['nombre']
+        correo = request.POST['correo']
+        mensaje = request.POST['mensaje']
+
+        template = render_to_string('email.html', {
+            'nombre': nombre,
+            'correo': correo,
+            'mensaje': mensaje
+        })
+
+        try:
+            emailSender = EmailMessage(
+                'Contacto desde la página web',  # Asunto del correo
+                template,
+                settings.EMAIL_HOST_USER,
+                ['juan.alvarez.g.97@gmail.com', 'ju.alvarezg@duocuc.cl']
+            )
+            emailSender.content_subtype = 'html'
+            emailSender.fail_silently = False
+            emailSender.send()
+            messages.success(request, 'Correo enviado exitosamente')
+        except Exception as e:
+            messages.error(request, f'Error al enviar el correo: {e}')
+
+        return redirect('index')
+     
+     return render(request, 'coffe/contact.html')
+
 
 def salir(request):
      logout(request)
      return redirect('index')
 
 def login(request):
-     if request.method == 'POST':
-            form = FormProd(request.POST)
-            if form.is_valid():
-               return render(request,'coffe/menu.html')
-     else:
-          return render(request,'registration/login.html')
+    
+    return render(request,'registration/login.html')
+
+def about(request):
+   
+     return render(request,'coffe/about.html')
 
 
 def Ext_prod():

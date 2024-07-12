@@ -16,41 +16,50 @@
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
       <a class="navbar-brand" href="{% url 'index' %}">
-        <strong>Caferia Juanito</strong>
+        
       </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars-rs-food"
-        aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars-rs-food" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbars-rs-food">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item {% block home %} active{% endblock%}">
-            <a class="nav-link" href="{% url 'index' %}">Home</a>
-          </li>
-          <li class="nav-item {% block producto %} {% endblock%}">
-            <a class="nav-link" href="{% url 'productos' %}">Productos</a>
-          </li>
-          <li class="nav-item {% block about %} {% endblock%}">
-            <a class="nav-link" href="about.html">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'BD'  %}">BBDD</a>
-
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'add'  %}">Agregar</a>
-
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'contacto' %}">Contact</a>
-          </li>
-        </ul>
-      </div>
-      <button class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#staticBackdropadd" id="btn-nav-add">Agregar
-        producto</button>
-
+      {% if request.user.is_authenticated %}
+        <h1>Bienvenido <span>{{request.user.username}}</span></h1>
+        <div class="collapse navbar-collapse" id="navbars-rs-food">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item "><a class="nav-link" href="{% url 'index' %}">Home</a></li> 
+        
+            <li class="nav-item"><a class="nav-link  " href="{% url 'menu' %}">Productos</a></li> 
+            {#<li class="nav-item"><a class="nav-link  " href="{% url 'about' %}">About</a></li> #}
+            
+            
+            <li class="nav-item"><a class="nav-link" href="{% url 'pedidos' %}">Pedidos</a></li> 
+            
+            {#<li class="nav-item"><a class="nav-link" href="{% url 'contacto' %}">Contacto</a></li> #}
+            {#<li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Login</a></li> #}
+            <li class="nav-item"><a class="nav-link" href="{% url 'salir' %}">Salir</a></li> 
+          </ul>
+        </div>
+      {% else %}
+        <h1>Bienvenido a Cafeteria Juanito </h1>
+        <div class="collapse navbar-collapse" id="navbars-rs-food">
+          <ul class="navbar-nav ml-auto">
+             <li class="nav-item "><a class="nav-link" href="{% url 'index' %}">Home</a></li> 
+        
+            <li class="nav-item"><a class="nav-link  " href="{% url 'menu' %}">Productos</a></li>
+            <li class="nav-item"><a class="nav-link  " href="{% url 'about' %}">About</a></li> 
+            
+            
+            <li class="nav-item"><a class="nav-link" href="{% url 'pedidos' %}">Pedidos</a></li>
+            
+          <li class="nav-item"><a class="nav-link" href="{% url 'contacto' %}">Contacto</a></li> 
+            <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Login</a></li> 
+            {#<li class="nav-item"><a class="nav-link" href="{% url 'salir' %}">Salir</a></li> {% endblock %}#}
+          </ul>
+        </div>
+      {% endif %}
+      
+  <button class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#staticBackdropadd" id="btn-nav-add">Agregar
+    producto</button>
     </div>
-  
   </nav>
   <div class="modal fade " id="staticBackdropadd" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
     aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -64,7 +73,7 @@
           <form class="table " method="post" enctype="multipart/form-data">
             {% csrf_token %}
             {{ form.as_table}}
-            <button class="btn btn-success" data-bs-dismiss="modal" type="submit">Guardar</button>
+            <button class="btn btn-warning" data-bs-dismiss="modal" type="submit">Guardar</button>
         </form>
 
         </div>

@@ -319,14 +319,19 @@ button:focus{
 
 .about-section-box{
 	padding: 70px 0px;
-	background: #ffffff url(../images/about-bg.jpg) no-repeat bottom center;
-	background-size: cover;
+	background: #ffffff url(../images/fondo3.jpg) no-repeat bottom center;
+	background-size: 100vw 100vh  ;
+    
+	background-attachment: fixed;
+	background-position: center center;
 }
 .about-section-box .img-fluid{
 	box-shadow: 20px 20px 0px #d65106;
 }
 .inner-column{
 	text-align: left;
+    background: black; 
+
 }
 .inner-column h1{
 	font-family: 'Rubik', sans-serif;
@@ -336,12 +341,15 @@ button:focus{
 }
 .inner-column h1 span{
 	color: #d65106;
+    background: black;
+
 }
 .inner-column h4{
 	font-size: 16px;
 	font-weight: 500;
 }
-.inner-column p{
+.inner-column  p {
+    background: black; 
 	font-size: 18px;
 	color: #222222;
 }
@@ -358,9 +366,9 @@ button:focus{
 
 
 .qt-background{
-	background: url(../images/qt-bg.jpg) no-repeat;
-	background-size: cover;
-	padding: 100px 0;
+	background: url(../images/fondo3.jpg) no-repeat;
+	background-size: 100% 100%;
+	padding: 100px 50px;
 	background-attachment: fixed;
 	background-position: center center;
 	position: relative;
