@@ -1,21 +1,41 @@
 {% extends 'coffe/index.html'  %}
 
 {% load static %}
+{%block active-index %} <li class="nav-item "><a class="nav-link" href="{% url 'index' %}">Home</a></li> {%endblock%}
+				
+						{% block active-menu %}<li class="nav-item"><a class="nav-link  " href="{% url 'menu' %}">Productos</a></li> {% endblock %}
+						{% block active-about%}<li class="nav-item"><a class="nav-link  " href="about.html">About</a></li> {% endblock %}
+						
+						
+						{% block active-contacto%}<li class="nav-item"><a class="nav-link" href="{% url 'contacto' %}/">Contacto</a></li> {% endblock %}
+						{% block active-login%}<li class="nav-item active"><a class="nav-link" href="{% url 'login' %}">Login</a></li> {% endblock %}
 
-
-{%  block content  %}
-<form action="" method="post" class="my-5">
+{%  block contenido %}
+<div class="container pt-5 mb-5">
+    
+<h1 class="mt-5">Login</h1>
+<h1 mt-5>Cafeteria Juanito</h1>
+<form action="" method="post" class=" col-lg-12 bg-warning py-5 border border-dark rounded-5    ">
 
     {% csrf_token %}
+    <div class="col-lg-12 my-4">
+        <label class="col-lg-4" for="">Nombre usuario</label>
+        <input type="text" name="username" placeholder="Nombre de usuario" class="col-lg-7">
+    </div>
+    <div class="col-lg-12">
+        <label for="" class="col-lg-4">Usuario Contraseña</label>
+        <input type="password" name="password" placeholder="password" class="col-lg-7">
+    </div>
 
-    <input type="text" name="username" placeholder="Nombre de usuario">
-    <input type="password" name="password" placeholder="password">
 
 
 
-    <input type="submit" class="btn btn-warning">
+
+    <input type="submit" class="btn btn-warning border-dark ">
 
 </form>
+
+</div>
 
 
 {%  endblock  %}

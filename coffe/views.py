@@ -2,12 +2,29 @@ from django.shortcuts import render, redirect
 from .models import Producto,Categoria
 from .forms import FormProd, ContactoForm
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth import logout
 
 # Create your views here.
 
 
 def index(request):
     return render(request, 'coffe/index.html')
+def menu(request):
+    return render(request, 'coffe/menu.html')
+def contacto(request):
+    return render(request, 'coffe/contact.html')
+
+def salir(request):
+     logout(request)
+     return redirect('index')
+
+def login(request):
+     if request.method == 'POST':
+            form = FormProd(request.POST)
+            if form.is_valid():
+               return render(request,'coffe/menu.html')
+     else:
+          return render(request,'registration/login.html')
 
 
 def Ext_prod():

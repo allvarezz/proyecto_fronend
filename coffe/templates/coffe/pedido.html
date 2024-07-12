@@ -12,6 +12,7 @@
     <nav>
         {% if request.user.is_authenticated %}
         <h1>Bienvenido: {{request.user.username}}</h1>
+        <a href="{% url 'salir' %}">Salir</a>
         {% else %}
         <h1>Pagina de pedido</h1>
         {% endif %}

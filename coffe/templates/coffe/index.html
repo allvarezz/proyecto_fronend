@@ -1,6 +1,6 @@
 {% load static  %}
 <!DOCTYPE html>
-<html lang="en"><!-- Basic -->
+<html lang="es"><!-- Basic -->
 <head>
 	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">   
@@ -39,7 +39,7 @@
 	<header class="top-navbar">
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
 			<div class="container">
-				<a class="navbar-brand" href="{url 'index'}">
+				<a class="navbar-brand" href="{% url 'index' %}">
 					<img src="images/logo.png" alt="" />
 				</a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars-rs-food" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
@@ -47,19 +47,21 @@
 				</button>
 				<div class="collapse navbar-collapse" id="navbars-rs-food">
 					<ul class="navbar-nav ml-auto">
-						<li class="nav-item active"><a class="nav-link" href="{ url 'index'}">Home</a></li>
-						<li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
-						<li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+						{%block active-index %} <li class="nav-item active"><a class="nav-link" href="{% url 'index' %}">Home</a></li> {%endblock%}
+				
+						{% block active-menu %}<li class="nav-item"><a class="nav-link  " href="{% url 'menu' %}">Productos</a></li> {% endblock %}
+						{% block active-about%}<li class="nav-item"><a class="nav-link  " href="about.html">About</a></li> {% endblock %}
 						
 						
-						<li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-						<li class="nav-item"><a class="nav-link" href="contact.html">Login</a></li>
+						{% block active-contacto%}<li class="nav-item"><a class="nav-link" href="{% url 'contacto' %}/">Contacto</a></li> {% endblock %}
+						{% block active-login%}<li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Login</a></li> {% endblock %}
 					</ul>
 				</div>
 			</div>
 		</nav>
 	</header>
 	<!-- End header -->
+	 {%  block contenido  %}
 	
 	<!-- Start slides -->
 	<div id="slides" class="cover-slides">
@@ -530,6 +532,7 @@
 		</div>
 	</div>
 	<!-- End Contact info -->
+	 {% endblock  %}
 	
 	<!-- Start Footer -->
 	<footer class="footer-area bg-f">
